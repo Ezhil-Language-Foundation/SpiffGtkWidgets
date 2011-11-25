@@ -89,7 +89,7 @@ class Table(Element):
         # Create a new target.
         target = Target()
         target.connect('child-attached', self._on_target_child_attached)
-        target.connect('child-removed',  self._on_target_child_removed)
+        target.connect('child-dropped',  self._on_target_child_removed)
         target.connect('child-replaced', self._on_target_child_replaced)
         target.set_data('row', top)
         target.set_data('col', lft)

@@ -31,7 +31,7 @@ class Target(Element):
     def _drop_child(self):
         if self.box.child is None:
             return
-        self.emit('child-removed', self.box.child)
+        self.emit('child-dropped', self.box.child)
         self.box.remove(self.box.child)
 
 
@@ -120,7 +120,7 @@ gobject.signal_new('child-attached',
                    gobject.TYPE_NONE,
                    (gobject.TYPE_PYOBJECT, ))
 
-gobject.signal_new('child-removed',
+gobject.signal_new('child-dropped',
                    Target,
                    gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE,
